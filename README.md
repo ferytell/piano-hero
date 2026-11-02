@@ -1,9 +1,16 @@
 # Piano Hero
 
-React + Vite rhythm-style piano trainer. Free, no backend, deploys to GitLab Pages. Notes use a synthesized struck-string sound with a short room reverb.
+React + Vite rhythm-style piano trainer. Free, no backend. Notes use a synthesized struck-string sound with a short room reverb.
 
-    npm install && npm run dev      # local
-    git push                        # GitLab CI builds + publishes (see .gitlab-ci.yml)
+    npm install
+    npm run dev      # local
+    npm run deploy   # build and publish dist/ to the gh-pages branch
+
+## Deploy to GitHub Pages
+1. Run `npm run deploy`. The predeploy script builds the app and `gh-pages` publishes `dist/` to the `gh-pages` branch on the configured Git remote.
+2. In the repository's GitHub Pages settings, choose **Deploy from a branch**, select `gh-pages`, and use the `/ (root)` folder.
+
+The Vite build uses relative asset URLs so the app also works from the repository's GitHub Pages subpath.
 
 ## Add a song
 1. Create `public/songs/my-song.json`:
